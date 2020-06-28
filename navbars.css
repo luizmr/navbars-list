@@ -1,0 +1,411 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.container li {
+    list-style: none;
+    margin: 100px auto;
+}
+
+/* Transparent Hover Effect Navigation bar */
+
+.transparentNavBar {
+    width: 960px;
+
+    position: relative;
+
+    mask-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        #fff 25%,
+        #fff 75%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    margin: 0 auto;
+    padding: 0 0;
+}
+
+.transparentNavBar ul {
+    text-align: center;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 25%,
+        rgba(255, 255, 255, 0.2) 75%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1),
+        inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+.transparentNavBar ul li {
+    display: inline-block;
+    margin: 0;
+}
+.transparentNavBar ul li a {
+    padding: 18px;
+    font-family: Verdana;
+    text-transform: uppercase;
+    color: rgba(0, 35, 122, 0.5);
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+}
+.transparentNavBar ul li a:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+        inset 0 0 1px rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(0, 35, 122, 0.7);
+}
+
+/* Breadcrumb pagination design */
+
+.bread-crumbs {
+    text-align: center;
+    font-family: Helvetica;
+}
+.bread-crumbs ul {
+    list-style: none;
+    display: inline-table;
+}
+.bread-crumbs ul li {
+    display: inline;
+}
+.bread-crumbs ul li a {
+    display: block;
+    float: left;
+    height: 50px;
+    background: #f3f5fa;
+    text-align: center;
+    padding: 30px 20px 0 60px;
+    position: relative;
+    margin: 0 10px 0 0;
+    font-size: 20px;
+    text-decoration: none;
+    color: #8093a7;
+}
+.bread-crumbs ul li a:after {
+    content: "";
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid #f3f5fa;
+    position: absolute;
+    right: -40px;
+    top: 0;
+    z-index: 1;
+}
+.bread-crumbs ul li a:before {
+    content: "";
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.bread-crumbs ul li:first-child a {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.bread-crumbs ul li:first-child a:before {
+    display: none;
+}
+.bread-crumbs ul li:last-child a {
+    padding-right: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.bread-crumbs ul li:last-child a:after {
+    display: none;
+}
+.bread-crumbs ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+.bread-crumbs ul li a:hover:after {
+    border-left-color: #333;
+    color: #fff;
+}
+
+/* Sidebar Menu Hover effect */
+
+.sidebarMenu {
+    background: rgb(0, 100, 200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebarMenu ul {
+    list-style-type: none;
+    padding: 0;
+    background: transparent;
+    height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.sidebarMenu ul li {
+    font-size: 30px;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.1em;
+    width: 5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    position: relative;
+    overflow: hidden;
+    margin: 0.5em;
+    margin-top: 45px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding-left: 2px;
+}
+.sidebarMenu ul li span {
+    color: white;
+    mix-blend-mode: difference;
+}
+.sidebarMenu ul li::before {
+    content: "";
+    position: absolute;
+    width: 1.5em;
+    height: inherit;
+    background: rgba(71, 182, 197, 0.8);
+    top: 0;
+    left: -0.75em;
+    transition: 0.5s ease-out;
+}
+.sidebarMenu ul li:hover::before {
+    width: 6em;
+}
+
+/* Animated search bar */
+
+.searchBar {
+    font-family: Helvetica;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBar input[type="text"] {
+    position: relative;
+    padding: 15px 40px 15px 20px;
+    width: 20px;
+    color: transparent;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    background: linear-gradient(to right, #fff 0%, #464747 #f9f9f9 100%);
+    transition: width 0.4s ease;
+    outline: none;
+}
+.searchBar input::placeholder {
+    color: transparent;
+}
+.searchBar input[type="text"]:focus {
+    width: 300px;
+    color: #525252;
+}
+.searchBar input:focus::placeholder {
+    color: #525252;
+}
+.searchBar i {
+    position: relative;
+    left: -48px;
+    color: #8233c5;
+    transform: scale(1.2);
+}
+
+/* App Navigation Concept */
+
+.appNav {
+    position: relative;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    /* color: #303030;
+    background-color: #f5f5fb; */
+}
+.appNav .menuNav {
+    display: flex;
+    flex-grow: 1;
+    height: 72px;
+    width: 370px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 1px 0 rgba(52, 46, 173, 0.25),
+        0 15px 30px 0 rgba(52, 46, 173, 0.1);
+}
+.appNav .menuNav .menuItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-decoration: none;
+}
+.menuItem:focus,
+.menuItem:hover {
+    outline: none;
+}
+.menuItem:focus .material-icons,
+.menuItem:hover .material-icons {
+    font-family: "Material Icons";
+    color: #342ead;
+}
+.menuItem:focus .itemLabel,
+.menuItem:hover .itemLabel {
+    color: #342ead;
+}
+.menuItem .material-icons {
+    font-family: "Material Icons Outlined";
+    display: block;
+    margin-bottom: 4px;
+    font-size: 26px;
+    color: #aeabde;
+    transition: 0.25s ease;
+}
+.menuItem .itemLabel {
+    display: block;
+    font-size: 13px;
+    color: #c2c0c6;
+    transition: 0.25s ease;
+}
+
+/* Awesome vertical nav menu bar */
+
+.verticalNav {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+.verticalNav li {
+    list-style: none;
+    text-align: center;
+}
+.verticalNav li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 5px 20px;
+    display: inline-flex;
+    font-weight: 700;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+.verticalNav:hover li a {
+    color: #0002;
+}
+.verticalNav li:hover a {
+    color: #000;
+    background-color: rgba(255, 255, 255, 1);
+}
+.verticalNav li a:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    opacity: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 500px;
+    transition: letter-spacing 0.5s, left 0.5s;
+}
+.verticalNav li a:hover:before {
+    content: attr(data-text);
+    opacity: 1;
+    left: 50%;
+    letter-spacing: 10px;
+    width: 100vw;
+    height: 110vh;
+}
+.verticalNav li:nth-child(6n + 1) a:before {
+    background-color: #81ecec;
+}
+.verticalNav li:nth-child(6n + 2) a:before {
+    background-color: #ff7675;
+}
+.verticalNav li:nth-child(6n + 3) a:before {
+    background-color: #55efc4;
+}
+.verticalNav li:nth-child(6n + 4) a:before {
+    background-color: #a29bfe;
+}
+.verticalNav li:nth-child(6n + 5) a:before {
+    background-color: #fd79a8;
+}
+.verticalNav li:nth-child(6n + 6) a:before {
+    background-color: #ffeaa7;
+}
+
+/* Bubbble Nav Bar */
+
+.bubbleNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.bubbleNav ul li {
+    color: goldenrod;
+    font-size: 16px;
+    border: 0.3em solid goldenrod;
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+}
+.bubbleNav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: goldenrod;
+    transform: translateY(150%);
+    border-radius: 50%;
+    transition: 0.5s;
+    z-index: -1;
+    left: calc((var(--n) - 1) * 25%);
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+}
+.bubbleNav ul li:hover {
+    color: black;
+}
+.bubbleNav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+.bubbleNav ul li span:nth-child(1) {
+    --n: 1;
+}
+.bubbleNav ul li span:nth-child(2) {
+    --n: 2;
+}
+.bubbleNav ul li span:nth-child(3) {
+    --n: 3;
+}
+.bubbleNav ul li span:nth-child(4) {
+    --n: 4;
+}
